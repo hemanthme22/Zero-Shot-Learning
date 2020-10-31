@@ -11,6 +11,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Performs clustering of attributes for the selected dataset using selected clustering technique")
     parser.add_argument("-d", "--data_set", required=True,help=("Provide the dataset name"))
     parser.add_argument("-c", "--clustering_technique", required=True,help=("Provide the clustering technique"))
+    parser.add_argument("-a", "--aux_set", required=True,help=("Provide the auxilary information to use"))
+
     
     args = vars(parser.parse_args())
     
@@ -23,6 +25,8 @@ if __name__ == "__main__":
     clustering_technique = args['clustering_technique']
     #clustering_technique = "af"
     
+    aux_set = args['aux_set']
+    
     #Reading Train and test pickles
     X_train = pd.read_pickle(data_loc+'/X_train.pkl')
     y_train = pd.read_pickle(data_loc+'/y_train.pkl')
@@ -34,9 +38,9 @@ if __name__ == "__main__":
     y_test = pd.read_pickle(data_loc+'/y_test.pkl')
     
     #Training a classifier and running predictions for each value of K.
-    f = open(out_dir+data_set+"/clusterCenters_"+ clustering_technique +".txt",'r')
+    f = open(out_dir+data_set+"/clusterCenters_"+aux_set+"_"+ clustering_technique +".txt",'r')
     lines = f.readlines()
-    for line in lines[131:]:
+    for line in lines:
         line = line.split()
         modelName = line[0]
         classesNow = line[1:]
@@ -46,16 +50,16 @@ if __name__ == "__main__":
         X_train_val = train_now_df.drop(['class_name'],axis=1)
         y_train_val = train_now_df['class_name'].astype('category')
         #training randomforest
-        mdl_rf = RandomForestClassifier(n_estimators=400,random_state=0,verbose=1,n_jobs=-1, min_samples_split= 2, min_samples_leaf= 1, max_features= 'auto', max_depth= 60, bootstrap= False)
+        mdl_rf = RandomForestClassifier(n_estimators=1000,random_state=0,verbose=1,n_jobs=-1, min_samples_split= 2, min_samples_leaf= 1, max_features= 'auto', max_depth= 60, bootstrap= False)
         clf_fit = mdl_rf.fit(X_train_val, y_train_val)
         # evaluate the model on test data
         yhat_clf = clf_fit.predict(X_test)
         pred_df = pd.DataFrame(data=yhat_clf, columns=['max_prob'])
-        pred_df.to_pickle(out_dir+data_set+'/predictions_'+clustering_technique+'/'+modelName+'.pkl')
+        pred_df.to_pickle(out_dir+data_set+'/predictions_'+aux_set+'_'+clustering_technique+'/'+modelName+'.pkl')
         #Finding prob predictions for all classes
         yhat_clf_prob = clf_fit.predict_proba(X_test)
         pred_df = pd.DataFrame(data=yhat_clf_prob, columns=clf_fit.classes_)
-        pred_df.to_pickle(out_dir+data_set+'/predictions_'+clustering_technique+'/all_categories/'+modelName+'.pkl')
+        pred_df.to_pickle(out_dir+data_set+'/predictions_'+aux_set+'_'+clustering_technique+'/all_categories/'+modelName+'.pkl')
         gc.collect()
     f.close()
 

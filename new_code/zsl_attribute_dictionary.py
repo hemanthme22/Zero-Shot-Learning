@@ -41,17 +41,17 @@ if __name__ == "__main__":
     f.close()
     
     #Generating close word dictionary for prediction phase
-    dict_keys = list(att_dict.keys())
-    closeWords_Count = 6
-    closeWord_dict = {}
-    
-    for word in dict_keys:
-        distance_dict = {}
-        for fast_word in dict_keys:
-            dist = scipy_distance(att_dict[word],att_dict[fast_word])
-            distance_dict[fast_word] = dist
-        closeWords_dict = {k: v for k, v in sorted(distance_dict.items(), key=lambda item: item[1])[:closeWords_Count]}
-        closeWord_dict[word] = list(closeWords_dict.keys())
-    pickle.dump(closeWord_dict, open(data_loc+'/closeWord_dict.pkl', 'wb'))
+#     dict_keys = list(att_dict.keys())
+#     closeWords_Count = 6
+#     closeWord_dict = {}
+#     
+#     for word in dict_keys:
+#         distance_dict = {}
+#         for fast_word in dict_keys:
+#             dist = scipy_distance(att_dict[word],att_dict[fast_word])
+#             distance_dict[fast_word] = dist
+#         closeWords_dict = {k: v for k, v in sorted(distance_dict.items(), key=lambda item: item[1])[:closeWords_Count]}
+#         closeWord_dict[word] = list(closeWords_dict.keys())
+#     pickle.dump(closeWord_dict, open(data_loc+'/closeWord_dict.pkl', 'wb'))
 
     print('Program Completed')
