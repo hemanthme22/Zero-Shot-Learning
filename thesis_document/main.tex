@@ -1,0 +1,58 @@
+% Pages in Thesis should have one of standard U.S. Paper Sizes
+% U.S Letter Paper (8.5 x 11) is used.
+% Body should be either 11 pt or 12 pt type.
+\documentclass[12pt, letterpaper]{thesis}
+
+\usepackage{hyperref}
+\usepackage[sorting=debug]{biblatex}
+\usepackage{afterpage}
+\addbibresource{references.bib}
+% For mathematical symbols such as degree
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage{booktabs}
+
+\date{}
+\begin{document}
+
+% Front Matter
+% Except for the "Abstract" page, every page of thesis must be assigned a
+% page number. Placement of consistent page numbers is necessary, and they
+% must either be at center, or at the top-right corner.
+% Page numbering should be roman numerals for the front matter, and numbered
+% for main text.
+\input{front_matter/abstract.tex}
+\pagenumbering{roman}
+\input{front_matter/title.tex}
+\input{front_matter/copyright.tex}
+\input{front_matter/approval.tex}
+\input{front_matter/acknowledgements.tex}
+\input{front_matter/contents.tex}
+\input{front_matter/tables.tex}
+\input{front_matter/figures.tex}
+
+% Chapters in Thesis
+% Chapter 1: Introduction
+\pagenumbering{arabic}
+\input{chapter1/introduction.tex}
+% Chapter 2: Related Work
+\input{chapter2/related_work.tex}
+% Chapter 3: Multi-model Solar Irradiance Forecasting
+\input{chapter3/irradiance_forecasting.tex}
+\input{chapter4/multi_model}
+\input{chapter5/conclusions}
+
+% Add 'References' section to Table of Contents
+\addcontentsline{chl}{chapter}{~REFERENCES}
+% Print References
+\clearpage
+\printbibliography[title={%
+    \begin{center}
+        \normalsize
+        \MakeUppercase{\textbf{References}}
+    \end{center}}]
+
+% Adding Appendix
+\input{appendix/appendix_a}
+
+\end{document}
