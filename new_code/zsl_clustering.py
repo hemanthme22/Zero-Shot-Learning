@@ -34,7 +34,7 @@ def PCA_dict(x_dict):
         x_keys.append(k)
     
     #Fitting PCA and transforming
-    pca_ft = PCA(.95)
+    pca_ft = PCA(0.70)
     pca_ft.fit(x_values)
     x_values_pca = pca_ft.transform(x_values)
     

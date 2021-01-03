@@ -1,5 +1,3 @@
-% Author:
-% Aashish Yadavally <aashish.yadavally1995@gmail.com>
 %
 % For the format check of a Thesis at The University of Georgia, it must
 % adhere to the list of instructions as defined in the document at:

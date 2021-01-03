@@ -44,6 +44,7 @@ y_test_df['rownum'] = np.arange(len(y_test_df))
 
 #Reading CloseWord_dict pickle
 closeWord_dict = pickle.load(open(data_loc+'/closeWord_dict_'+aux_set+'.pkl',"rb"))
+#closeWord_dict = pickle.load(open(data_loc+'/closeWord_dict_'+'att'+'.pkl',"rb"))
 
 #Reading Saved Classname and Attribure dictionary
 att_dict = pickle.load(open(data_loc+'/att_dict.pkl',"rb"))

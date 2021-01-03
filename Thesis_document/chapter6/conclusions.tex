@@ -1,0 +1,15 @@
+\chapter{}{Conclusions and Future Work}{Conclusions and Future Work}
+
+In this thesis, we propose a framework for generalized zero-shot learning (ZSL) that is simple yet very effective. The proposed framework offers an intuitive approach to aid in the training data collection process for image recognition tasks by identifying representative classes using various clustering techniques. It also  provides a method to infer unseen classes using cosine similarity measure. The proposed framework achieves accuracy figures that are 21\% greater on the AWA2 data set and 6\% greater on the CUB data set when compared to the well known Attribute Label Embedding (ALE) scheme for GZSL. On the SUN data set, the proposed model exhibits performance that is comparable to that of ALE. We also determine the minimum number of categories needed to considered as seen classes to achieve reasonable classification accuracy results on all the three data sets using the proposed model.
+
+\par
+\medskip
+
+One of the drawbacks of the proposed framework is the inability to infer unseen classes that are distant from the representative classes in the semantic space. There is significant scope for future improvement of the proposed framework in this aspect. A potential solution could be a scheme to map the distance between each unseen class and representative class in a cluster to the classification probabilities obtained from the visual classifier. In this way, the framework would be able to infer all unseen classes, regardless of the distance, with some non-zero probability.
+
+\par
+\medskip
+
+Another important future task is the evaluation of the proposed framework on a very large data set such as ImageNet. ImageNet spans more than 1000 classes and has several images in each class unlike the SUN data set which while having over 700 classes, has very few images per class.
+
+\newpage

@@ -4,13 +4,20 @@
 \documentclass[12pt, letterpaper]{thesis}
 
 \usepackage{hyperref}
-\usepackage[sorting=debug]{biblatex}
+%\usepackage[sorting=debug]{biblatex}
+\usepackage[style=numeric,giveninits]{biblatex}
 \usepackage{afterpage}
 \addbibresource{references.bib}
 % For mathematical symbols such as degree
 \usepackage{textcomp}
 \usepackage{gensymb}
 \usepackage{booktabs}
+\usepackage{amsthm}
+\usepackage{pdflscape}
+\usepackage{rotating}
+\usepackage{mathpazo}
+\usepackage{longtable}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
 
 \date{}
 \begin{document}
@@ -31,16 +38,23 @@
 \input{front_matter/tables.tex}
 \input{front_matter/figures.tex}
 
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+
 % Chapters in Thesis
 % Chapter 1: Introduction
 \pagenumbering{arabic}
-\input{chapter1/introduction.tex}
+\input{MS-Thesis-master/chapter1/introduction}
 % Chapter 2: Related Work
-\input{chapter2/related_work.tex}
-% Chapter 3: Multi-model Solar Irradiance Forecasting
-\input{chapter3/irradiance_forecasting.tex}
-\input{chapter4/multi_model}
-\input{chapter5/conclusions}
+\input{MS-Thesis-master/chapter2/related_work}
+% Chapter 3: Datasets
+\input{MS-Thesis-master/chapter3/datasets.tex}
+% Chapter 4: Methodology
+\input{MS-Thesis-master/chapter4/methodology}
+% Chapter 3: Comparison
+\input{MS-Thesis-master/chapter5/ale_comparison}
+% Chapter 3: Conclusion
+\input{MS-Thesis-master/chapter6/conclusions}
 
 % Add 'References' section to Table of Contents
 \addcontentsline{chl}{chapter}{~REFERENCES}
@@ -54,5 +68,6 @@
 
 % Adding Appendix
 \input{appendix/appendix_a}
+\input{MS-Thesis-master/appendix/appendix_b}
 
 \end{document}

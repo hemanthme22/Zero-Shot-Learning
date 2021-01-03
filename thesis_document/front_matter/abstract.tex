@@ -2,20 +2,20 @@
 \thispagestyle{empty}
 \newgeometry{top=1.75in, left=1.5in, right=1in, bottom=1in}
 \begin{center}
-    AN EXPLORATION OF MACHINE LEARNING BASED DAY-AHEAD SOLAR IRRADIANCE FORECASTING METHODOLOGIES
+    EXPLORING THE LIMITS OF ZERO-SHOT LEARNING - HOW LOW CAN YOU GO ?
     
     by
     
-    AASHISH YADAVALLY
+    HEMANTH DANDU
     
-    (Under the Direction of Frederick Maier)
+    (Under the Direction of Suchendra Bhandarkar)
     
     ABSTRACT
 \end{center}
-Predicting solar irradiance is an important topic in renewable energy generation. In this work, the North American Mesoscale (NAM) Forecast System data is augmented with irradiance observations from the solar farm at the University of Georgia, towards forecasting 24 hours into the future. For the machine learning models used for this purpose, an input-selection scheme is presented and evaluated. This scheme significantly improved the performance, and resulted in a mean absolute error ($MAE$) of 72.63$W/m^2$, 44.94$W/m^2$ and 63.60$W/m^2$ for the dual-axis tracking, fixed-axis and single-axis tracking solar arrays respectively. The effect of geographic expansion, by including additional weather forecasts is evaluated. Furthermore, to correct the reported bias in global horizontal irradiance (GHI) in NAM Forecast System, theory-driven bias-correction approaches are explored, where NAM Forecast System is selectively combined with \textit{Clear-Sky Scaling} and \textit{Liu-Jordan} techniques. In addition, the ability of predictive models involving clear-sky index to capture seasonal patterns is evaluated.
+Zero-shot learning aims to classify input data into categories with zero training examples. The classification is performed by inferring unseen categories using visual data of seen categories and their relationships with unseen categories. Relationships are determined by using auxiliary data pertaining to categories such as attributes and semantics. Standard zero-shot learning techniques use a large number of seen categories to predict very few unseen categories while maintaining unified data splits and evaluation metrics. This has enabled the research community to advance notably towards formulating a standard benchmark zero-shot learning algorithm. However, the most substantial impact of zero-shot learning lies in enabling the prediction of a large number of unseen categories from very few seen categories within a specific domain. This permits the collection of training data for only a few previously seen categories, thereby mitigating the training data collection process significantly. In this thesis, we focus on the difficult problem of predicting a large number of unseen object categories from very few previously seen categories. We propose a framework that enables us to examine the limits of inferring several unseen object categories from very few previously seen object categories, i.e., the limits of zero-shot learning. In particular, we examine the functional dependence of the classification accuracy of unseen object classes on the number of previously seen classes. We also determine the minimum number of previously seen classes required to achieve pre-specified classification accuracy for the unseen classes on three standard zero-shot learning data sets, i.e., AWA2, CUB and SUN. Additionally, we compare the proposed framework with a prominent zero-shot learning technique on the aforementioned data sets and find that we achieve 21\% higher accuracy on the AWA2 data set, 6\% higher accuracy on the CUB data set, and comparable performance on the SUN data set while providing valuable insights into the unseen class inference process.
 
-\vspace{3\baselineskip}
+%\vspace{2\baselineskip}
 \noindent
-INDEX WORDS: solar forecasting, machine learning, numerical weather prediction, bias correction, clear-sky index, clearness index
+INDEX WORDS: machine learning, image classification, zero-shot learning, transfer learning
 
 \newpage
