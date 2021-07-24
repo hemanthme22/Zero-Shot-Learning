@@ -9,7 +9,7 @@ https://openaccess.thecvf.com/content/CVPR2021W/MULA/html/Dandu_Exploring_the_Li
 Folder `new_code` contains code used for recent CVPR Workshop paper. Here, all files with the prefix `zsl_` are part of the main pipeline, others are for adhoc analysis and graphs.
 
 ### Directory structure
-Make the following directory structure before running the code. Also, run code in the order mentioned below.
+Make the following directory structure before running the code. Run code in the order mentioned below. Also, make sure to change location variable within the code.
 ```
 project
 └───data
