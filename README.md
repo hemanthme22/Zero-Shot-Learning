@@ -32,11 +32,11 @@ project
 ```
 
 ### Data Preparation
-- Image Features: reads raw data in `.mat` format and converts them into a dictionary of class names and their features(images). It also splits them into train and test sets, and saves. 
+- Image Features: reads raw data in `.mat` format and converts them into a dictionary of class names and their features(images). It also splits them into train and test sets, and saves. Raw data can be downloaded [here](https://www.mpi-inf.mpg.de/departments/computer-vision-and-machine-learning/research/zero-shot-learning/zero-shot-learning-the-good-the-bad-and-the-ugly).
 
   Run command: python `zsl_feature_dataframe.py -d AWA2`
 
-- Attribute Information(auxiliary): reads raw data in `.mat` format converts it into a dictionary of class names and their respective attributes, and saves. Raw data can be downloaded [here](https://www.mpi-inf.mpg.de/departments/computer-vision-and-machine-learning/research/zero-shot-learning/zero-shot-learning-the-good-the-bad-and-the-ugly).
+- Attribute Information(auxiliary): reads raw data in `.mat` format converts it into a dictionary of class names and their respective attributes, and saves.
 
   Run command: `python zsl_attribute_dictionary.py -d AWA2`
 
